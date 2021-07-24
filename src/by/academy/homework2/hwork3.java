@@ -2,7 +2,7 @@ package by.academy.homework;
 
 import java.util.Scanner;
 
-public class hwork3 {
+public class Work3 {
     public static void main(String[] args) {
         Scanner scanner =new Scanner(System.in);
         boolean exit = true;
