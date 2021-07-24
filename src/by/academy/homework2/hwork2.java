@@ -1,7 +1,7 @@
 package by.academy.homework2;
 import java.util.Scanner;
-//task 2
-public class hwork2 {
+
+public class Work2 {
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
         int col = s.nextInt();
