@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class hwork3 {
     public static void main(String[] args) {
         Scanner scanner =new Scanner(System.in);
-        boolean n = true;
-        while(n) {
+        boolean exit = true;
+        while(exit) {
             String s1 = scanner.nextLine();
             String s2 = scanner.nextLine();
             if(s1.length() % 2 == 0 & s2.length() % 2 == 0 & !s1.isEmpty() & !s2.isEmpty()){
@@ -18,7 +18,7 @@ public class hwork3 {
                 str2.delete(0,tempS2);
                 str1.append(str2);
                 System.out.println(str1);
-                n = false;
+                exit = false;
             }
         }
     }
