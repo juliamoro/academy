@@ -3,52 +3,37 @@ package by.academy.homework;
 import java.util.Random;
 import java.util.Scanner;
 
-public class hwork4 {
+public class Deal {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int number = s.nextInt();
-        if(number>1){
+        int num = 1;
+        if (number > 1 && number < 8) { //game from 2 to 7 players
             for (int i = 1; i <= number; i++) {
-                System.out.println("Игрок "+ number);
+                System.out.println("Игрок " + num);
                 deck();
+                num++;
+                System.out.println();
             }
-
+        } else {
+            System.out.println("game from 2 to 7 players");
         }
     }
 
-    public static void deck () {
-        String[] deckList = {"JOFCLUBS", "QOFCLUBS", "KOFCLUBS", "AOFCLUBS",
-                "SIXOFCLUBS","SEVENOFCLUBS","EIGHTOFCLUBS","NINEOFCLUBS","TENOFCLUBS", "JOFDIAMONDS", "QOFDIAMONDS", "KOFDIAMONDS", "AOFDIAMONDS",
-                "SIXOFDIAMONDS","SEVENOFDIAMONDS","EIGHTOFDIAMONDS","NINEOFDIAMONDS","TENOFDIAMONDS", "JOFHEARTS", "QOFHEARTS", "KOFHEARTS", "AOFHEARTS",
-                "SIXOFHEARTS","SEVENOFHEARTS","EIGHTOFHEARTS","NINEOFHEARTS","TENOFHEARTS",
-                "JOFPEAKS", "QOFPEAKS", "KOFPEAKS", "AOFPEAKS", "SIXOFPEAKS","SEVENOFPEAKS","EIGHTOFPEAKS","NINEOFPEAKS","TENOFPEAKS"};
-        String[] card = new String[4];
-        boolean exit = true;
-        int temp = 0;
+    //there are 36 cards in the deck
+    public static void deck() {
+        String[] deck = {"JOFCLUBS", "QOFCLUBS", "KOFCLUBS", "AOFCLUBS",
+                "SIXOFCLUBS", "SEVENOFCLUBS", "EIGHTOFCLUBS", "NINEOFCLUBS", "TENOFCLUBS", "JOFDIAMONDS", "QOFDIAMONDS", "KOFDIAMONDS", "AOFDIAMONDS",
+                "SIXOFDIAMONDS", "SEVENOFDIAMONDS", "EIGHTOFDIAMONDS", "NINEOFDIAMONDS", "TENOFDIAMONDS", "JOFHEARTS", "QOFHEARTS", "KOFHEARTS", "AOFHEARTS",
+                "SIXOFHEARTS", "SEVENOFHEARTS", "EIGHTOFHEARTS", "NINEOFHEARTS", "TENOFHEARTS",
+                "JOFPEAKS", "QOFPEAKS", "KOFPEAKS", "AOFPEAKS", "SIXOFPEAKS", "SEVENOFPEAKS", "EIGHTOFPEAKS", "NINEOFPEAKS", "TENOFPEAKS"};
+        String[] card = new String[5];
         Random r = new Random();
-        for (int i = 0;i< card.length;i++){
-            while(exit) {
-                String str = deckList[r.nextInt(deckList.length)];
-                String checkStr = null;
-                if(str != checkStr){
-                    checkStr = str;
-                }
-                for (int j = 0; j < card.length; j++) {
-                    if(str != card[j]){
-                        card[j] = str;
-                        temp++;
-                        System.out.println(temp);
-                    }
-                }
-                if(temp == 4){
-                    exit = false;
-                }
-            }
-            for (String element: card) {
-                System.out.println(element);
-            }
+        int index;
+        for (int i = 0; i < card.length; i++) {
+            index = r.nextInt(deck.length);
+            card[i] = deck[index];
+            System.out.print(card[i] + " ");
         }
-
-        //return deckList[new Random().nextInt(deckList.length)];
     }
 }
